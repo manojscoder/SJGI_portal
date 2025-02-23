@@ -160,7 +160,7 @@ def get_class_details():
     today_day = datetime.today().strftime('%A')
     current_time = datetime.now().time()
     today_date = datetime.today().strftime('%d-%m-%Y')
-    cutoff_time = time(12, 30)
+    cutoff_time = time(8, 30)
     
     regularDomainId = []
     swapDomainId = []
@@ -1056,7 +1056,7 @@ IST = pytz.timezone('Asia/Kolkata')  # Change if needed
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(
-    get_domains_today, 'cron', hour=12, minute=30, timezone=IST
+    get_domains_today, 'cron', hour=8, minute=30, timezone=IST
 ) 
 
 scheduler.start()
